@@ -7,3 +7,8 @@ install:
   - poetry install
 script:
   - poetry run pytest
+after_success:
+  - coveralls
+branches:
+  only:
+    - master
