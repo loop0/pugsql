@@ -8,4 +8,4 @@ class TestParser:
         with open('characters.sql', 'r') as fd:
             parsed_file = parser.parse(fd)
 
-        assert len(parsed_file) == 5
+        assert len(parsed_file) == 4
