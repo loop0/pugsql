@@ -1,0 +1,8 @@
+[run]
+source = pugsql
+
+[report]
+show_missing = true
+
+[xml]
+output = build/coverage.xml

@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "pugsql"
+version = "0.1.0"
+description = ""
+authors = ["Bruno Ribeiro da Silva <bruno.devpod@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+jinja2 = "^2.10"
+sqlparse = "^0.2.4"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.5"
+pytest-coverage = "^0.0.0"
+pytest-mock = "^1.10"
