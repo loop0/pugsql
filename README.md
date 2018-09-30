@@ -14,12 +14,10 @@ where id = :id;
 
 `example.py`
 ```python
-from pugsql import def_db_fns
-def_db_fns('characters.sql')
-
-from pugsql import characters
 import psycopg2
 from psycopg2.extras import RealDictCursor
+from pugsql import characters
+
 conn = psycopg2.connect('postgres://postgres@localhost:5432/db', cursor_factory=RealDictCursor)
 characters.character_by_id(conn, {'id': 1})
 # {'id': 1, 'name': 'Bruno Ribeiro', 'specialty': 'Backend Developer', 'created_at': datetime.datetime(2018, 6, 7, 2, 8, 5, 449020)}
