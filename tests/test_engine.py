@@ -1,7 +1,5 @@
 import pytest
 
-from pugsql import def_db_fns
-
 
 @pytest.fixture
 def mocked_db(mocker):
@@ -33,7 +31,6 @@ def mocked_db(mocker):
     )
 )
 def test_def_db_fns(mocked_db, function_name, function_args, execute_args, result_function):
-    def_db_fns('characters.sql')
     from pugsql import characters
 
     assert hasattr(characters, function_name)
@@ -46,7 +43,6 @@ def test_def_db_fns(mocked_db, function_name, function_args, execute_args, resul
 
 
 def test_insert_character(mocked_db):
-    def_db_fns('characters.sql')
     from pugsql import characters
 
     result = characters.insert_character(mocked_db,

@@ -14,10 +14,11 @@ class PugSQLModuleFinder(MetaPathFinder):
             return None
 
         module_name = fullname[7:]
-        if module_name in self._modules.keys():
-            return ModuleSpec(module_name, PugSQLModuleLoader(self._modules))
+        if module_name not in self._modules.keys():
+            from pugsql import def_db_fns
+            def_db_fns('{}.sql'.format(module_name))
 
-        return None
+        return ModuleSpec(module_name, PugSQLModuleLoader(self._modules))
 
 
 class PugSQLModuleLoader(Loader):
